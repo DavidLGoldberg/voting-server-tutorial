@@ -3,14 +3,14 @@ import jsdom from 'mocha-jsdom';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { Provider } from 'react-redux';
-import CounterPage from '../../src/containers/CounterPage';
+import Page from '../../src/containers/Page';
 import configureStore from '../../src/store/configureStore';
 
 function setup(initialState) {
   const store = configureStore(initialState);
   const app = TestUtils.renderIntoDocument(
     <Provider store={store}>
-      <CounterPage />
+      <Page />
     </Provider>
   );
   return {

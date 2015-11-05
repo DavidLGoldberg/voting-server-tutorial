@@ -5,12 +5,10 @@ import promiseMiddleware from 'redux-promise';
 import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
 
-
 const loggerMiddleware = createLogger({
   level: 'info',
-  collapsed: true
+  collapsed: true,
 });
-
 
 let createStoreWithMiddleware;
 
@@ -27,7 +25,6 @@ if (typeof __DEVTOOLS__ !== 'undefined' && __DEVTOOLS__) {
     promiseMiddleware
   )(createStore);
 }
-
 
 /**
  * Creates a preconfigured store.

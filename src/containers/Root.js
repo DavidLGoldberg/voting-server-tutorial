@@ -5,20 +5,17 @@ import { Router, PropTypes as RouterPropTypes } from 'react-router';
 import configureStore from '../store/configureStore';
 import routes from '../routes';
 
-
 const store = configureStore();
-
 
 if (typeof __DEVTOOLS__ !== 'undefined' && __DEVTOOLS__) {
   const createDevToolsWindow = require('../utils/createDevToolsWindow');
   createDevToolsWindow(store);
 }
 
-
 export default class Root extends Component {
 
   static propTypes = {
-    history: RouterPropTypes.history.isRequired
+    history: RouterPropTypes.history.isRequired,
   };
 
   render() {
