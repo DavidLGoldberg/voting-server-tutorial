@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import counter from '../../src/reducers/counter';
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../../src/actions/counter';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, MULTIPLY_COUNTER } from '../../src/actions/counter';
 
 describe('reducers', () => {
   describe('counter', () => {
@@ -14,6 +14,10 @@ describe('reducers', () => {
 
     it('should handle DECREMENT_COUNTER', () => {
       expect(counter(1, { type: DECREMENT_COUNTER })).to.equal(0);
+    });
+
+    it('should handle MULTIPLY_COUNTER', () => {
+      expect(counter(1, { type: MULTIPLY_COUNTER })).to.equal(10);
     });
 
     it('should handle unknown action type', () => {
