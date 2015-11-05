@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import CounterPage from '../../src/containers/CounterPage';
 import configureStore from '../../src/store/configureStore';
 
-
 function setup(initialState) {
   const store = configureStore(initialState);
   const app = TestUtils.renderIntoDocument(
@@ -19,10 +18,9 @@ function setup(initialState) {
     buttons: TestUtils.scryRenderedDOMComponentsWithTag(app, 'button').map(button => {
       return button;
     }),
-    p: TestUtils.findRenderedDOMComponentWithTag(app, 'p')
+    p: TestUtils.findRenderedDOMComponentWithTag(app, 'p'),
   };
 }
-
 
 describe('containers', () => {
   jsdom();

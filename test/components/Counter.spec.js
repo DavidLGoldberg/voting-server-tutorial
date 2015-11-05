@@ -6,25 +6,24 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import Counter from '../../src/components/Counter';
 
-
 function setup() {
   const actions = {
     increment: spy(),
     incrementIfOdd: spy(),
     incrementAsync: spy(),
-    decrement: spy()
+    decrement: spy(),
   };
-  const component = TestUtils.renderIntoDocument(<Counter counter={1} {...actions} />);
+  const component =
+    TestUtils.renderIntoDocument(<Counter counter={1} {...actions} />);
   return {
     component: component,
     actions: actions,
     buttons: TestUtils.scryRenderedDOMComponentsWithTag(component, 'button').map(button => {
       return button;
     }),
-    p: TestUtils.findRenderedDOMComponentWithTag(component, 'p')
+    p: TestUtils.findRenderedDOMComponentWithTag(component, 'p'),
   };
 }
-
 
 describe('Counter component', () => {
   jsdom();

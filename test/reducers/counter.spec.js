@@ -2,7 +2,6 @@ import { expect } from 'chai';
 import counter from '../../src/reducers/counter';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../../src/actions/counter';
 
-
 describe('reducers', () => {
   describe('counter', () => {
     it('should handle initial state', () => {
