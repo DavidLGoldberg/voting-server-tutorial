@@ -5,7 +5,7 @@ export const MULTIPLY_COUNTER = 'MULTIPLY_COUNTER';
 
 export function increment() {
   return {
-    type: INCREMENT_COUNTER
+    type: INCREMENT_COUNTER,
   };
 }
 
