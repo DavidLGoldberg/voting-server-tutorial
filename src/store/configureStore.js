@@ -2,6 +2,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from 'redux-promise';
+import screamMiddleware from '../middleware/scream';
 import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
 
@@ -15,7 +16,7 @@ let createStoreWithMiddleware;
 if (typeof __DEVTOOLS__ !== 'undefined' && __DEVTOOLS__) {
   const { devTools, persistState } = require('redux-devtools');
   createStoreWithMiddleware = compose(
-    applyMiddleware(thunkMiddleware, promiseMiddleware, loggerMiddleware),
+    applyMiddleware(thunkMiddleware, promiseMiddleware, loggerMiddleware, screamMiddleware),
     devTools(),
     persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
   )(createStore);
