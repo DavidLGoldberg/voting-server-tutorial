@@ -8,7 +8,7 @@ export default function screamMiddleware({ dispatch }) {
 
     console.log('^^^^^^^^^^^');
     console.log(action);
-    console.log(next(action));
+    console.log('$$$$$$$$$$$');
     return next(action);
   };
 }
